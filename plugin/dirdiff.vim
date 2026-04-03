@@ -97,7 +97,7 @@ endif
 
 let g:DirDiffLangString = ""
 if (g:DirDiffForceLang != "")
-    if has('win32') && !has('win32unix')
+    if has('win32') && !has('win32unix') && getenv('MSYSTEM') == v:null
       let g:DirDiffLangString = 'SET LANG=' . g:DirDiffForceLang . ' && '
     else
       let g:DirDiffLangString = 'LANG=' . g:DirDiffForceLang . ' '
